@@ -27,7 +27,10 @@ we choose to put in the open so that you can check our claims instead of trustin
 Measured on a synthetic dataset of 2,000 memories and 223 questions, no real user data
 (full report: [`benchmarks/rapport.md`](benchmarks/rapport.md), in French).
 
-- The right memory is **first in 53 %** of cases (95 % CI 47–60 %) and **in the top 5 in 70 %** (63–76 %).
+- Original run (2 October 2026, engine before v3): the right memory is **first in 53 %** of cases
+  (95 % CI 47–60 %) and **in the top 5 in 70 %** (63–76 %).
+- Engine in production since 3 October (v3), same dataset: **first in 61 %** (54–68 %), **top 5 in 77 %**
+  (71–83 %); raw file [`benchmarks/results_v3/v1_production.json`](benchmarks/results_v3/v1_production.json).
 - It beats keyword-only search (BM25) by +0.165 MRR (CI +0.089 to +0.237), mostly when the question
   is asked in another language than the memory.
 - It does **not** measurably beat semantic-only search with the same embedding model

@@ -5,7 +5,7 @@ beforehand with different templates (v2, "held-out"). Every change is compared w
 run on the same questions, with 95 % bootstrap confidence intervals. We keep a change only if it
 helps without degrading another category beyond noise.
 
-## Engine v3 (validated on held-out data, not yet released)
+## Engine v3 (validated on held-out data, released 3 October 2026)
 
 | Held-out measure (2,000 memories) | Before | After | Difference (95 % CI) |
 |---|---|---|---|
@@ -32,5 +32,15 @@ second memory sharing a rare name with the first.
   was dropped. Capping candidates sent to the reranker lowered quality and was dropped too.
 - **Latency target missed.** The 95th percentile is 550 to 835 ms depending on the run; the
   cross-encoder dominates. A smaller reranker is future work.
+
+## Reranker latency (4 October 2026)
+
+In production, memories are much longer than in the benchmark (median 72 characters there). The
+cross-encoder read up to 115 candidates of up to 512 tokens each, and a search could take 4 to 6 s.
+It now reads at most 40 candidates (the benchmark never sends more) and the first 128 tokens of each
+(no benchmark memory reaches that length). Benchmark results are identical to the third decimal;
+worst case measured on our server for long memories: 14.5 s before, about 1.3 s after.
+Trade-off, stated plainly: for a very long memory the reranker judges its beginning only; the
+semantic and keyword stages still read the full text.
 
 Raw results for the original run are in [`benchmarks/results`](benchmarks/results).

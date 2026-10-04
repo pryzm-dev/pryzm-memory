@@ -30,8 +30,8 @@ A question goes through four stages:
 4. **Rerank**: a multilingual cross-encoder re-scores the shortlist, then a recency and
    importance weighting breaks ties between old and new versions of the same fact.
 
-Engine v3 (see the changelog) adds a graded confidence level per result so the assistant can
-hedge instead of asserting. A memory graph links related memories and can pull neighbours into the answer.
+Since engine v3 (3 October 2026, see the changelog), each result carries a graded confidence
+level so the assistant can hedge instead of asserting. A memory graph links related memories and can pull neighbours into the answer.
 
 Public: the pipeline above, and measured results ([`benchmarks/`](benchmarks)).
 Private: the implementation, thresholds, weights and prompts.
