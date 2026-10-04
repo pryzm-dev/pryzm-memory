@@ -40,6 +40,10 @@ Measured on a synthetic dataset of 2,000 memories and 223 questions, no real use
 - Known weaknesses, measured and published: superseded facts (the old version ranks first 71 % of
   the time on the original run), questions needing two memories, and questions with no answer.
 
+- On the public **LoCoMo** benchmark (1,532 questions, retrieval only, no LLM), the evidence is in
+  Pryzm's top 5 for **64 %** of questions, against 52 % for keyword search and 37 % for semantic search
+  alone ([`benchmarks/locomo`](benchmarks/locomo)).
+
 Benchmarks are re-run and published here as the engine changes.
 
 ## What is not here
