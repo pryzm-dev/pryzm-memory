@@ -10,6 +10,18 @@ One source of truth for your context, and it belongs to you.
 
 In development since June 2026.
 
+## Connect
+
+Pryzm is a remote MCP server (streamable HTTP, OAuth sign-in). Add it as a custom connector
+in Claude, ChatGPT or any MCP client:
+
+```
+https://pryzm-memory.com/mcp
+```
+
+Step-by-step guides for each assistant: https://pryzm-memory.com/en/connect/
+Listed in the official MCP registry as `com.pryzm-memory/memory`. A free plan is available.
+
 ## What this repository is
 
 Pryzm is a hosted service, and its engine is **not** open source. This repository is the part
